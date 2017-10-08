@@ -42,24 +42,24 @@ in the way of an easy, direct conversion to helm chart.
 
 Roadmap of todos here, under the quickstart notes:
 
-[ ]: The service IP is not known at the time of instantiating the service, as
+- [ ]: The service IP is not known at the time of instantiating the service, as
 reflected by the original non-helm quickstart instructions, the requirement to
 run `kubectl describe services nfs-server`.
 
-kingdonb/examples-volumes-nfs#2: You can't use Cluster DNS when setting up PVs
+<a href="https://github.com/kingdonb/examples-volumes-nfs/issues/2">kingdonb/examples-volumes-nfs#2</a>: You can't use Cluster DNS when setting up PVs
 
 It would be better to depend on cluster discovery or DNS so that the client PV
 does not require knowledge of the IP address, instead inferring information
 about the location of the service through the known value of the service name.
 
-[ ]: The cloud provider and storage provisioner may be variable and should be
+- [ ]: The cloud provider and storage provisioner may be variable and should be
 configurable as a user option in values.yaml.
 
 If other storage provisioners require different storageClass settings or
 otherwise need adjustments to the provisioner/pv in order to claim a persistent
 disk, then these facts should be configurable from the values.yaml.
 
-[ ]: A better example of an NFS consumer than the web rc is possible.
+- [ ]: A better example of an NFS consumer than the web rc is possible.
 
 My idea is to build an "off-cluster Minio" service provider for the proposed
 change in deis/workflow#857.  The Minio service should be implemented as NFS
@@ -83,7 +83,7 @@ This will never be as resilient as a Ceph service, (that also provides its own
 object gateway, obviating need for Minio) but for environments where the extra
 overhead of Ceph is not warranted, this could be a more viable alternative.
 
-[ ]: Now that we have built up client, make the server separable.
+- [ ]: Now that we have built up client, make the server separable.
 
 It should be possible to use the NFS client example against an arbitrary NFS
 service.  Add some alternative configuration for an environment where AWS EFS
