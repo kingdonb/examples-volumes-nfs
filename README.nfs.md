@@ -46,6 +46,8 @@ Roadmap of todos here, under the quickstart notes:
 reflected by the original non-helm quickstart instructions, the requirement to
 run `kubectl describe services nfs-server`.
 
+kingdonb/examples-volumes-nfs#2: You can't use Cluster DNS when setting up PVs
+
 It would be better to depend on cluster discovery or DNS so that the client PV
 does not require knowledge of the IP address, instead inferring information
 about the location of the service through the known value of the service name.
